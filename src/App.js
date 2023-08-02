@@ -1,38 +1,24 @@
-import styled from 'styled-components'
-import Navbar from "./components/Tabbar"
-import ProfileData from './components/ProfileData';
-import EdgeButton from "./components/EdgeButton"
-import EmptyScreen from "./components/EmptyScreen"
+import styled from "styled-components";
+import { observer, inject } from "mobx-react";
+import EmptyScreen from "./components/EmptyScreen";
+import TabPanel from "./components/TabPanel/TabPanel";
+import ProjectsPanel from "./components/ProjectsPanel/ProjectsPanel";
 
-function App() {
+const App = ({ store }) => {
   return (
     <Container>
-      <TabPanel>
-        <Navbar/>
-        <EdgeButton/>
-        <ProfileData/>
-      </TabPanel>
-      <EmptyScreen/>
-
+      <TabPanel />
+      {store.NavbarIndex === null ? <EmptyScreen /> : <ProjectsPanel />}
     </Container>
   );
-}
+};
 const Container = styled.div`
-display: flex;
+  display: flex;
+  box-sizing: border-box;
   margin: 0px;
   padding: 0px;
   background-color: #151515;
   border-radius: 5px;
-`
-const TabPanel = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-  width: 48px;
-  gap: 20px;
-  border-color: #383838;
-  border-width: 0.1px;
-  border-right-style: solid;
-`
-export default App;
+`;
+
+export default inject("store")(observer(App));
