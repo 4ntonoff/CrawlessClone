@@ -22,6 +22,38 @@ const ButtonGroup = styled.div`
   width: 100%;
   background-color: #151515;
   height: 32px;
+  width: calc(100vw - 290px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* For WebKit-based browsers (Chrome and Safari) */
+/* Modify the width and color of the scrollbar */
+&::-webkit-scrollbar {
+  height: 4px; /* Height of the horizontal scrollbar */
+}
+
+/* Customize the appearance of the scrollbar thumb */
+&::-webkit-scrollbar-thumb {
+  background-color: #71717e; /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Border radius of the scrollbar thumb */
+}
+
+/* For Firefox */
+/* Modify the width and color of the scrollbar */
+scrollbar-width: thin;
+scrollbar-color: #71717e rgba(0, 0, 0, 0.4);
+
+/* To customize the scrollbar thumb in Firefox, you need to use an additional selector */
+/* This targets the thumb specifically for horizontal scrollbar */
+& {
+  scrollbar-color: #71717e rgba(0, 0, 0, 0.4);
+}
+
+/* Customize the appearance of the scrollbar thumb */
+&::-webkit-scrollbar-thumb:horizontal {
+  background-color: #71717e; /* Color of the scrollbar thumb for horizontal scrollbar in Firefox */
+  border-radius: 2px; /* Border radius of the scrollbar thumb for horizontal scrollbar in Firefox */
+}
+
 `;
 
 const HorizontalCollection = styled.div`
@@ -45,6 +77,7 @@ const HorizontalCollectionButton = styled.button`
   border-radius: 4px;
   background-color: transparent;
   outline: 0;
+  cursor: pointer;
 `;
 
 const TabContent = styled.div`
@@ -77,6 +110,13 @@ const TabSection = () => {
   const handleClose = (type) => {
     const updatedTypes = types.filter((item) => item.title !== type);
     setTypes(updatedTypes);
+
+    const activeIndex = types.findIndex((item) => item.title === type);
+    if (activeIndex === 0 && types.length > 1) {
+      setActive(types[1].title);
+    } else if (activeIndex > 0) {
+      setActive(types[activeIndex - 1].title);
+    }
   };
 
   return (
@@ -106,7 +146,7 @@ const TabSection = () => {
         </HorizontalCollectionButton>
       </HorizontalCollection>
       <TabContent>
-        <p style={{ color: "white"}}>{active} screen</p>
+        <p style={{ color: "white" }}>{active} screen</p>
       </TabContent>
     </Container>
   );

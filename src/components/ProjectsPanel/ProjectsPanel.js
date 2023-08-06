@@ -18,9 +18,23 @@ const Container = styled.div`
   flex-direction: column;
   height: 100vh;
   width: 240px;
+  
 `;
 
-const ProjectsList = styled.div``;
+const ProjectsList = styled.div`
+  height: calc(100vh - 56px);
+  overflow-y: auto;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #71717e rgba(0, 0, 0, 0.4); /* Firefox */
+  &::-webkit-scrollbar {
+    width: 4px; /* Width of the scroll bar */
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #71717e; /* Color of the scroll bar */
+    opacity: 0.4; /* Opacity of the scroll bar */
+    border-radius: 4px; /* Border radius of the scroll bar */
+  }
+`;
 
 const ProjectsPanel = ({ store }) => {
   return (
@@ -92,6 +106,32 @@ const ProjectsPanel = ({ store }) => {
           }
         />
         <ProjectElement Title="fvv" />
+        <ProjectElement
+          Title="project name"
+          Content={
+            <>
+              <FolderElement Title="Storage" Icon={MongoIcon} />
+              <FolderElement Title="Storage" Icon={MongoIcon} />
+              <FolderElement Title="Storage" Icon={MongoIcon} />
+              <FolderElement Title="Workflow" Icon={WorkflowIcon} />
+              <FolderElement Title="Workflow" Icon={WorkflowIcon} />
+              <FolderElement Title="Workflow" Icon={WorkflowIcon} />
+            </>
+          }
+        />
+        <ProjectElement
+          Title="project name"
+          Content={
+            <>
+              <FolderElement Title="Storage" Icon={MongoIcon} />
+              <FolderElement Title="Storage" Icon={MongoIcon} />
+              <FolderElement Title="Storage" Icon={MongoIcon} />
+              <FolderElement Title="Workflow" Icon={WorkflowIcon} />
+              <FolderElement Title="Workflow" Icon={WorkflowIcon} />
+              <FolderElement Title="Workflow" Icon={WorkflowIcon} />
+            </>
+          }
+        />
         <ProjectElement
           Title="project name"
           Content={

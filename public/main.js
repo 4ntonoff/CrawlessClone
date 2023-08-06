@@ -1,5 +1,5 @@
-const { app, BrowserWindow, Menu, screen } = require("electron");
-// Menu.setApplicationMenu(false)
+const { app, BrowserWindow, Menu } = require("electron");
+Menu.setApplicationMenu(false)
 require("@electron/remote/main").initialize();
 function createWindow() {
 

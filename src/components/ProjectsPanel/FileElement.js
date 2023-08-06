@@ -20,8 +20,8 @@ const Header = styled.div`
 
 const FolderElement = ({ Title, Icon, newTab }) => {
   return (
-    <Item>
-      <Header onClick={newTab}>
+    <Item onClick={newTab}>
+      <Header >
         <img src={Icon} alt="" />
         <span style={{ marginLeft: "6px", fontSize: "12px" }}>{Title}</span>
       </Header>
