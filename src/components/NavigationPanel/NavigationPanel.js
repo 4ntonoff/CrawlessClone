@@ -11,12 +11,10 @@ const Container = styled.div`
   height: 100vh;
   width: 48px;
   gap: 20px;
-  border-color: #383838;
-  border-width: 0.1px;
-  border-right-style: solid;
+  margin-right: 1px;
 `;
 
-const TabPanel = () => {
+const NavigationPanel = () => {
   return (
     <Container>
       <Tabbar />
@@ -26,4 +24,4 @@ const TabPanel = () => {
   );
 };
 
-export default TabPanel;
+export default NavigationPanel;

@@ -1,14 +1,27 @@
 import styled from "styled-components";
 import { observer, inject } from "mobx-react";
-import EmptyScreen from "./components/EmptyScreen";
-import TabPanel from "./components/TabPanel/TabPanel";
+import EmptyScreen from "./components/EmptyScreen/EmptyScreen";
+import NavigationPanel from "./components/NavigationPanel/NavigationPanel";
 import ProjectsPanel from "./components/ProjectsPanel/ProjectsPanel";
+import MainContent from "./components/MainContent/MainContent";
+
+const Main = styled.div`
+  display: flex;
+  flex: 1 auto;
+`;
 
 const App = ({ store }) => {
   return (
     <Container>
-      <TabPanel />
-      {store.NavbarIndex === null ? <EmptyScreen /> : <ProjectsPanel />}
+      <NavigationPanel />
+      {store.NavbarIndex === null ? (
+        <EmptyScreen />
+      ) : (
+        <Main>
+          {" "}
+          <ProjectsPanel /> <MainContent />
+        </Main>
+      )}
     </Container>
   );
 };
@@ -18,7 +31,6 @@ const Container = styled.div`
   margin: 0px;
   padding: 0px;
   background-color: #151515;
-  border-radius: 5px;
 `;
 
 export default inject("store")(observer(App));

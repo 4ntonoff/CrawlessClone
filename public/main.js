@@ -11,12 +11,12 @@ function createWindow() {
     minWidth: 1000,
     height: 600,
     minHeight: 600,
-    icon: __dirname + "/favicon.ico",
+    icon: __dirname + "/logo192.png",
     webPreferences: {
       enableRemoteModule: true,
     },
   });
-  win.webContents.setZoomFactor(currentDisplay.scaleFactor);
+  win.webContents.setZoomFactor(currentDisplay.scaleFactor * 2);
   win.loadURL("http://localhost:3000");
 }
 

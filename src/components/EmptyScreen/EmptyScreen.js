@@ -41,8 +41,7 @@ const KeyGrid = styled.div`
   display: flex;
   gap: 4px;
 `;
-const Key = styled.img`
-`;
+const Key = styled.img``;
 
 const ProfileData = () => {
   return (
@@ -62,18 +61,16 @@ const ProfileData = () => {
             <Key src={PKey} />
           </KeyGrid>
           <KeyGrid>
-          <Key src={ShiftKey} />
-          <Key src={PKey} />
+            <Key src={ShiftKey} />
+            <Key src={PKey} />
           </KeyGrid>
           <KeyGrid>
-          <Key src={ShiftKey} />
-          <Key src={WinKey} />
-          <Key src={FKey} />
-
+            <Key src={ShiftKey} />
+            <Key src={WinKey} />
+            <Key src={FKey} />
           </KeyGrid>
           <KeyGrid>
-          <Key src={F5Key} />
-
+            <Key src={F5Key} />
           </KeyGrid>
         </KeyList>
       </HotKeyList>

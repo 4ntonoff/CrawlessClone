@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { ReactComponent as LogoIcon } from "../assets/icons/logo_tiny.svg";
-import { ReactComponent as HouseIcon } from "../assets/icons/ic_house.svg";
-import { ReactComponent as StoreIcon } from "../assets/icons/ic_store.svg";
-import { ReactComponent as BellIcon } from "../assets/icons/ic_bell.svg";
-import { ReactComponent as BookIcon } from "../assets/icons/ic_book.svg";
+import { observer, inject } from "mobx-react";
+import { ReactComponent as LogoIcon } from "../../assets/icons/logo_tiny.svg";
+import { ReactComponent as HouseIcon } from "../../assets/icons/ic_house.svg";
+import { ReactComponent as StoreIcon } from "../../assets/icons/ic_store.svg";
+import { ReactComponent as BellIcon } from "../../assets/icons/ic_bell.svg";
+import { ReactComponent as BookIcon } from "../../assets/icons/ic_book.svg";
 
 const NavbarContainer = styled.div`
   display: flex;
@@ -30,19 +31,17 @@ const SvgItem = styled.div`
 
   &:hover {
     svg {
-      fill: #5C53F3;
+      fill: #5c53f3;
     }
   }
 `;
 
-// Component
-const Navbar = () => {
-  // You can manage the active state with React state hooks or Redux, depending on your setup.
-  const [activeIndex, setActiveIndex] = React.useState(null);
+const Navbar = ({ store }) => {
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const handleItemClick = (index) => {
     setActiveIndex(index);
-    // Handle the click event, e.g., navigate to a different page, show content, etc.
+    store.setNavbarIndex(index);
   };
 
   return (
@@ -66,4 +65,5 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+// export default inject('store')(observer(Navbar));
+export default inject("store")(observer(Navbar));

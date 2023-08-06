@@ -1,20 +1,29 @@
 import React from "react";
-import { observer, inject } from 'mobx-react';
+import { observer, inject } from "mobx-react";
 import styled from "styled-components";
+import SearchFilters from "./SearchFilters";
+// import TreeItem from "./TreeElement";
+// import HouseIcon from '../../assets/icons/ic_house.svg'
+
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 240px;
+`;
+
+const ProjectsList = styled.div``;
 
 const ProjectsPanel = ({ store }) => {
-  const activeIndex = store.NavbarIndex
   return (
-    <div>
-      {/* Display the selected content based on the activeIndex */}
-      {activeIndex === 0 && <div>Content for Section 0</div>}
-      {activeIndex === 1 && <div>Content for Section 1</div>}
-      {activeIndex === 2 && <div>Content for Section 2</div>}
-      {activeIndex === 3 && <div>Content for Section 3</div>}
-      {activeIndex === 4 && <div>Content for Section 4</div>}
-      <div>{activeIndex}</div>
-    </div>
+    <Container>
+      <SearchFilters />
+      <ProjectsList>
+
+      </ProjectsList>
+    </Container>
   );
 };
 
-export default inject('store')(observer(ProjectsPanel));
+export default inject("store")(observer(ProjectsPanel));
