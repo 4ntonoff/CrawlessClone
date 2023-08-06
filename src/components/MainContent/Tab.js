@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { ReactComponent as CrossIcon } from "../../assets/ui/ui_cross.svg";
+import { ReactComponent as CrossIcon } from "../../assets/icons/ic_cross.svg";
 
 const Container = styled.button`
   height: 32px;

@@ -2,21 +2,17 @@ const { app, BrowserWindow, Menu, screen } = require("electron");
 // Menu.setApplicationMenu(false)
 require("@electron/remote/main").initialize();
 function createWindow() {
-  const currentDisplay = screen.getDisplayNearestPoint(
-    screen.getCursorScreenPoint()
-  );
 
   const win = new BrowserWindow({
-    width: 1000,
+    width: 1280,
     minWidth: 1000,
-    height: 600,
+    height: 720,
     minHeight: 600,
     icon: __dirname + "/logo192.png",
     webPreferences: {
       enableRemoteModule: true,
     },
   });
-  win.webContents.setZoomFactor(currentDisplay.scaleFactor * 2);
   win.loadURL("http://localhost:3000");
 }
 

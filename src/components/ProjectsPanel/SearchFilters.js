@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import SearchIcon from "../../assets/icons/ic_search.svg";
-import { ReactComponent as TreeIcon } from "../../assets/ui/ui_tree.svg";
-import { ReactComponent as StarIcon } from "../../assets/ui/ui_star.svg";
-import { ReactComponent as ShareIcon } from "../../assets/ui/ui_share.svg";
-import { ReactComponent as CollapseIcon } from "../../assets/ui/ui_collapse.svg";
-import { ReactComponent as TargetIcon } from "../../assets/ui/ui_target.svg";
-import { ReactComponent as AddIcon } from "../../assets/ui/ui_add.svg";
+import { ReactComponent as TreeIcon } from "../../assets/icons/ic_tree.svg";
+import { ReactComponent as StarIcon } from "../../assets/icons/ic_star.svg";
+import { ReactComponent as ShareIcon } from "../../assets/icons/ic_share.svg";
+import { ReactComponent as CollapseIcon } from "../../assets/icons/ic_collapse.svg";
+import { ReactComponent as TargetIcon } from "../../assets/icons/ic_target.svg";
+import { ReactComponent as AddIcon } from "../../assets/icons/ic_add.svg";
 
 const Container = styled.div`
   box-sizing: content-box;
