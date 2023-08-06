@@ -96,17 +96,17 @@ const TabSection = () => {
         ))}
       </ButtonGroup>
       <HorizontalCollection>
-        <HorizontalCollectionButton onClick>
+        <HorizontalCollectionButton>
           <img alt="" src={ExportIcon}></img>
           <span style={{ color: "#464753" }}>Export to file</span>
         </HorizontalCollectionButton>
-        <HorizontalCollectionButton onClick>
+        <HorizontalCollectionButton>
           <img alt="" src={ResetIcon}></img>
           <span style={{ color: "#464753" }}>Reset</span>
         </HorizontalCollectionButton>
       </HorizontalCollection>
       <TabContent>
-        <p style={{ color: "white", verticalAlign: "middle" }}>{active}</p>
+        <p style={{ color: "white"}}>{active} screen</p>
       </TabContent>
     </Container>
   );
